@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Edicion del Usuario</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+
+<body>
+    <h1>Edicion del Usuario:</h1>
+    <form th:action="@{/editar/{id}(id=${users.id})}" th:object="${users}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <label for="nombre">Nombre: </label>
+        <br>
+        <input type="text" th:field="*{name}" />
+        <br>
+        <label for="email">Email: </label>
+        <br>
+        <input type="text" th:field="*{email}" />
+        <br>
+        <button type="submit">Guardar cambios</button>
+    </form>
+</body>
+
+</html>
